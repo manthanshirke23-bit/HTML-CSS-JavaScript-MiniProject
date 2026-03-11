@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | BrewBound — Craft Beer Discovery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ AGE GATE ══════════════════════════════════════════════ -->
+  <div id="age-gate-overlay" class="age-gate-overlay">
+    <div class="age-gate-box">
+      <div class="age-gate-img-bg">
+        <img src="https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?w=800&auto=format&fit=crop&q=60" alt="Craft beer glasses">
+      </div>
+      <span class="age-gate-logo">🍺</span>
+      <div class="age-gate-brand">BrewBound</div>
+      <div class="age-gate-tagline">Craft Beer Discovery</div>
+      <h2 class="age-gate-question">Are you 21 or older?</h2>
+      <p class="age-gate-sub">You must be of legal drinking age to enter this site.</p>
+      <div class="age-gate-buttons">
+        <button id="btn-enter" class="btn btn-primary btn-lg">✓ Yes, I'm 21+</button>
+        <button id="btn-exit" class="btn btn-outline btn-lg">✗ No, Exit</button>
+      </div>
+      <p class="age-gate-legal">By entering, you confirm you are of legal drinking age. Please drink responsibly.</p>
+    </div>
+  </div>
+
+  <div id="age-denied" class="age-denied-screen hidden">
+    <div class="denied-icon">🚫</div>
+    <h2 class="denied-title">Access Denied</h2>
+    <p class="denied-text">Sorry, you must be 21 or older to access BrewBound.<br><br>Redirecting you in a few seconds...</p>
+  </div>
+
+
+  <!-- ══ NAVBAR ════════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <a href="brewery.html" class="nav-logo">
+      <span class="nav-logo-icon">🍺</span>
+      <span class="nav-logo-text">BrewBound</span>
+    </a>
+    <div class="nav-links">
+      <a href="brewery.html" class="hide-mobile">🏭 Breweries</a>
+      <a href="events.html">📅 Events</a>
+      <a href="brewery.html#pricing" class="hide-mobile">💰 Pricing</a>
+      <a href="#" class="nav-cta book-btn" data-item="Tasting Experience">Book Now</a>
+    </div>
+  </nav>
+
+
+  <!-- ══ HERO — photo background ══════════════════════════════ -->
+  <header class="hero hero-with-photo">
+    <img
+      class="hero-bg-photo"
+      src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600&auto=format&fit=crop&q=80"
+      alt="Lively brewery event with people tasting craft beers"
+      loading="eager"
+    >
+    <div class="hero-photo-overlay"></div>
+    <div class="hero-text-content">
+      <div class="hero-badge">📅 Brewery Events Calendar</div>
+      <h1 class="hero-title">Discover <span>Craft Beer</span> Events Near You</h1>
+      <p class="hero-subtitle">
+        From intimate tasting nights to grand seasonal launches —
+        find and book your next craft beer adventure.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="stat-number">24</span><span class="stat-label">Events</span></div>
+        <div class="stat-pill"><span class="stat-number">8</span><span class="stat-label">Breweries</span></div>
+        <div class="stat-pill"><span class="stat-number">3</span><span class="stat-label">This Week</span></div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="section">
+
+      <div class="section-header">
+        <span class="section-label">Upcoming Events</span>
+        <h2 class="section-title">What's <em>Brewing</em> This Month</h2>
+        <p class="section-desc">
+          Book your spot at exclusive tasting events, behind-the-scenes
+          brewery tours, and live music nights.
+        </p>
+      </div>
+
+      <!-- ══ EVENTS LIST ════════════════════════════════════════
+           Each event card now has a photo on the left side.
+           This makes the cards much more visually engaging!
+      ══════════════════════════════════════════════════════════ -->
+      <div class="events-list">
+
+        <!-- EVENT 1: Tasting Night -->
+        <article class="event-card event-card-with-img">
+          <!-- Photo on the left -->
+          <div class="event-photo">
+            <img
+              src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=400&auto=format&fit=crop&q=75"
+              alt="Beer tasting night — people sampling craft beers"
+              loading="lazy"
+            >
+            <span class="event-photo-tag tag-tasting">🍺 Tasting Night</span>
+          </div>
+          <!-- Date box -->
+          <div class="event-date-box">
+            <span class="event-month">Jul</span>
+            <span class="event-day">12</span>
+            <span class="event-year">2025</span>
+          </div>
+          <!-- Info -->
+          <div class="event-info">
+            <h3 class="event-name">Summer Haze IPA Tasting Night</h3>
+            <div class="event-meta">
+              <span>🏭 Copper Kettle Brewing</span>
+              <span>⏰ 7:00 PM – 10:00 PM</span>
+              <span>📍 Downtown District</span>
+            </div>
+            <p class="event-description">
+              Join head brewer Marcus Rivera for an intimate guided tasting of 6 summer seasonal IPAs.
+              Explore hop varieties from Mosaic to Citra, with cheese pairings from local artisan dairy farms.
+            </p>
+          </div>
+          <!-- Actions -->
+          <div class="event-actions">
+            <div>
+              <div class="event-price-label">Per Person</div>
+              <div class="event-price">₹2,899</div>
+            </div>
+            <span class="event-spots">🔥 8 spots left</span>
+            <button class="btn btn-primary btn-sm book-btn" data-item="Summer Haze IPA Tasting Night">Book Tasting Flight</button>
+          </div>
+        </article>
+
+        <!-- EVENT 2: Brewery Tour -->
+        <article class="event-card event-card-with-img">
+          <div class="event-photo">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&auto=format&fit=crop&q=75"
+              alt="Brewery tour guide explaining the brewing process"
+              loading="lazy"
+            >
+            <span class="event-photo-tag tag-tour">🗺️ Brewery Tour</span>
+          </div>
+          <div class="event-date-box">
+            <span class="event-month">Jul</span>
+            <span class="event-day">15</span>
+            <span class="event-year">2025</span>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Behind the Barrel: Full Brewery Tour</h3>
+            <div class="event-meta">
+              <span>🏭 Iron Forge Brewery</span>
+              <span>⏰ 2:00 PM – 4:30 PM</span>
+              <span>📍 Industrial Quarter</span>
+            </div>
+            <p class="event-description">
+              Walk through every stage of the brewing process from grain mill to fermentation tanks.
+              Tour includes a 4-sample tasting flight and a keepsake pint glass. Perfect for enthusiasts and beginners alike.
+            </p>
+          </div>
+          <div class="event-actions">
+            <div>
+              <div class="event-price-label">Per Person</div>
+              <div class="event-price">₹3,749</div>
+            </div>
+            <span class="event-spots">✅ 14 spots left</span>
+            <button class="btn btn-primary btn-sm book-btn" data-item="Behind the Barrel Brewery Tour">Book Brewery Tour</button>
+          </div>
+        </article>
+
+        <!-- EVENT 3: Seasonal Launch -->
+        <article class="event-card event-card-with-img">
+          <div class="event-photo">
+            <img
+              src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=400&auto=format&fit=crop&q=75"
+              alt="Seasonal beer launch party with amber beers"
+              loading="lazy"
+            >
+            <span class="event-photo-tag tag-launch">🎉 Seasonal Launch</span>
+          </div>
+          <div class="event-date-box">
+            <span class="event-month">Jul</span>
+            <span class="event-day">19</span>
+            <span class="event-year">2025</span>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Autumn Ember Märzen — Grand Launch Night</h3>
+            <div class="event-meta">
+              <span>🏭 Amber Valley Craft Co.</span>
+              <span>⏰ 6:00 PM – 11:00 PM</span>
+              <span>📍 Riverside Taproom</span>
+            </div>
+            <p class="event-description">
+              Be among the first to taste Amber Valley's acclaimed seasonal Märzen. Unlimited samples, live folk acoustic music,
+              and a food truck lineup with pretzels and smoked meats — the perfect Oktoberfest celebration.
+            </p>
+          </div>
+          <div class="event-actions">
+            <div>
+              <div class="event-price-label">Per Person</div>
+              <div class="event-price">₹2,099</div>
+            </div>
+            <span class="event-spots">🔥 22 spots left</span>
+            <button class="btn btn-primary btn-sm book-btn" data-item="Autumn Ember Märzen Launch Night">Book Tasting Flight</button>
+          </div>
+        </article>
+
+        <!-- EVENT 4: Live Music Night -->
+        <article class="event-card event-card-with-img">
+          <div class="event-photo">
+            <img
+              src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&auto=format&fit=crop&q=75"
+              alt="Live music night at a brewery — band performing"
+              loading="lazy"
+            >
+            <span class="event-photo-tag tag-music">🎸 Live Music</span>
+          </div>
+          <div class="event-date-box">
+            <span class="event-month">Jul</span>
+            <span class="event-day">22</span>
+            <span class="event-year">2025</span>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Hops &amp; Harmony — Jazz Night at the Tap</h3>
+            <div class="event-meta">
+              <span>🏭 Copper Kettle Brewing</span>
+              <span>⏰ 8:00 PM – Midnight</span>
+              <span>📍 Rooftop Taproom</span>
+            </div>
+            <p class="event-description">
+              Smooth jazz meets smooth ales on the rooftop terrace. The Blue Note Collective performs two sets
+              while you enjoy our rotating tap menu of 18 house-brewed selections. No cover charge.
+            </p>
+          </div>
+          <div class="event-actions">
+            <div>
+              <div class="event-price-label">Entry Fee</div>
+              <div class="event-price">Free</div>
+            </div>
+            <span class="event-spots">✅ Open entry</span>
+            <button class="btn btn-outline btn-sm book-btn" data-item="Hops & Harmony Jazz Night">Reserve a Table</button>
+          </div>
+        </article>
+
+        <!-- EVENT 5: Homebrewer Competition -->
+        <article class="event-card event-card-with-img">
+          <div class="event-photo">
+            <img
+              src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&auto=format&fit=crop&q=75"
+              alt="Homebrewer competition — tasting tokens and sample glasses"
+              loading="lazy"
+            >
+            <span class="event-photo-tag tag-tasting">🏆 Competition</span>
+          </div>
+          <div class="event-date-box">
+            <span class="event-month">Jul</span>
+            <span class="event-day">26</span>
+            <span class="event-year">2025</span>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Local Homebrewer Showdown &amp; Public Tasting</h3>
+            <div class="event-meta">
+              <span>🏭 Iron Forge Brewery</span>
+              <span>⏰ 12:00 PM – 5:00 PM</span>
+              <span>📍 Main Taproom + Patio</span>
+            </div>
+            <p class="event-description">
+              12 local homebrewers compete for the Golden Growler award. You receive 10 tasting tokens to sample all entries
+              and cast your vote for the People's Choice Award. Winners announced at 4:30 PM.
+            </p>
+          </div>
+          <div class="event-actions">
+            <div>
+              <div class="event-price-label">Per Person</div>
+              <div class="event-price">₹1,649</div>
+            </div>
+            <span class="event-spots">🎟️ 40 spots left</span>
+            <button class="btn btn-primary btn-sm book-btn" data-item="Homebrewer Showdown Tasting Entry">Book Tasting Flight</button>
+          </div>
+        </article>
+
+        <!-- EVENT 6: Sour Beer Workshop -->
+        <article class="event-card event-card-with-img">
+          <div class="event-photo">
+            <img
+              src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&auto=format&fit=crop&q=75"
+              alt="Sour beer workshop — barrel aged wild ales in the barrel room"
+              loading="lazy"
+            >
+            <span class="event-photo-tag tag-launch">🍋 Workshop</span>
+          </div>
+          <div class="event-date-box">
+            <span class="event-month">Aug</span>
+            <span class="event-day">03</span>
+            <span class="event-year">2025</span>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Sour Hour: The Science of Wild Fermentation</h3>
+            <div class="event-meta">
+              <span>🏭 Amber Valley Craft Co.</span>
+              <span>⏰ 3:00 PM – 6:00 PM</span>
+              <span>📍 Barrel Room</span>
+            </div>
+            <p class="event-description">
+              An educational deep-dive into wild ales, Lambics, Berliner Weisse, and Gose.
+              Lead brewer Dr. Sarah Kim guides you through spontaneous fermentation. Includes a 5-beer sour flight from the barrel room collection.
+            </p>
+          </div>
+          <div class="event-actions">
+            <div>
+              <div class="event-price-label">Per Person</div>
+              <div class="event-price">₹4,599</div>
+            </div>
+            <span class="event-spots">🔥 6 spots left</span>
+            <button class="btn btn-primary btn-sm book-btn" data-item="Sour Hour Wild Fermentation Workshop">Book Tasting Flight</button>
+          </div>
+        </article>
+
+      </div><!-- end events-list -->
+    </section>
+
+
+    <!-- ══ PRICING SECTION ════════════════════════════════════ -->
+    <section class="section" id="pricing" style="background:rgba(42,26,8,0.4);max-width:100%;margin:0;border-top:1px solid rgba(255,255,255,0.05);">
+      <div style="max-width:1280px;margin:0 auto;">
+
+        <div class="section-header">
+          <span class="section-label">Packages &amp; Pricing</span>
+          <h2 class="section-title">Choose Your <em>Tasting Experience</em></h2>
+          <p class="section-desc">From casual samplers to dedicated beer enthusiasts — we have the perfect package for every palate.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <div class="pricing-card-img">
+              <img src="https://images.unsplash.com/photo-1510996952651-9d8af74a4687?w=500&auto=format&fit=crop&q=70" alt="3-beer tasting flight" loading="lazy">
+            </div>
+            <span class="pricing-icon">🍺</span>
+            <div class="pricing-name">Tasting Flight Bundle</div>
+            <div class="pricing-price">₹1,499 <span>/ flight</span></div>
+            <p class="pricing-desc">Perfect introduction to craft beer tasting</p>
+            <ul class="pricing-features">
+              <li>3 curated beer samples (4oz each)</li>
+              <li>Tasting notes guide included</li>
+              <li>Choice of any 3 from tap menu</li>
+              <li>Suggested food pairings</li>
+            </ul>
+            <button class="btn btn-outline book-btn" data-item="Tasting Flight Bundle (3 beers)" style="width:100%;justify-content:center;">Book This Package</button>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-card-img">
+              <img src="https://images.unsplash.com/photo-1555658636-6e4a36218be7?w=500&auto=format&fit=crop&q=70" alt="Premium 5-beer tasting flight" loading="lazy">
+            </div>
+            <span class="pricing-icon">⭐</span>
+            <div class="pricing-name">Premium Tasting Flight</div>
+            <div class="pricing-price">₹2,449 <span>/ flight</span></div>
+            <p class="pricing-desc">Our most popular deep-dive tasting experience</p>
+            <ul class="pricing-features">
+              <li>5 premium beer samples (5oz each)</li>
+              <li>Expert-guided tasting notes</li>
+              <li>Access to reserve &amp; barrel-aged beers</li>
+              <li>Cheese &amp; charcuterie pairing board</li>
+              <li>Keepsake tasting glass to take home</li>
+            </ul>
+            <button class="btn btn-primary book-btn" data-item="Premium Tasting Flight (5 beers)" style="width:100%;justify-content:center;">Book This Package</button>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-card-img">
+              <img src="https://images.unsplash.com/photo-1538991383142-36c4edeaffde?w=500&auto=format&fit=crop&q=70" alt="Brewery tour — fermentation tanks" loading="lazy">
+            </div>
+            <span class="pricing-icon">🏭</span>
+            <div class="pricing-name">Brewery Tour Ticket</div>
+            <div class="pricing-price">₹3,749 <span>/ person</span></div>
+            <p class="pricing-desc">Full behind-the-scenes brewery experience</p>
+            <ul class="pricing-features">
+              <li>90-minute guided brewery tour</li>
+              <li>4-sample tasting flight included</li>
+              <li>Meet the brewmaster Q&amp;A session</li>
+              <li>Sneak peek at upcoming releases</li>
+              <li>10% discount on merchandise</li>
+            </ul>
+            <button class="btn btn-outline book-btn" data-item="Brewery Tour Ticket" style="width:100%;justify-content:center;">Book This Package</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">🍺 BrewBound</div>
+    <p class="footer-tagline">Discovering craft beer, one flight at a time.</p>
+    <nav class="footer-nav">
+      <a href="brewery.html">Breweries</a>
+      <a href="events.html">Events</a>
+      <a href="brewery.html#pricing">Pricing</a>
+    </nav>
+    <div class="footer-divider"></div>
+    <p class="footer-legal">
+      © 2025 BrewBound. All rights reserved. Must be 21+ to access this website.<br>
+      Please drink responsibly. Prices shown are for educational project purposes only.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

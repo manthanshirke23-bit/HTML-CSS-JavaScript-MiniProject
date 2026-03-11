@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breweries & Beer Menu | BrewBound</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ AGE VERIFICATION POPUP ═══════════════════════════════ -->
+  <div id="age-gate-overlay" class="age-gate-overlay">
+    <div class="age-gate-box">
+      <div class="age-gate-img-bg">
+        <img src="https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?w=800&auto=format&fit=crop&q=60" alt="Craft beer">
+      </div>
+      <span class="age-gate-logo">🍺</span>
+      <div class="age-gate-brand">BrewBound</div>
+      <div class="age-gate-tagline">Craft Beer Discovery</div>
+      <h2 class="age-gate-question">Are you 21 or older?</h2>
+      <p class="age-gate-sub">
+        BrewBound celebrates craft beer culture responsibly.
+        You must be of legal drinking age to enter this site.
+      </p>
+      <div class="age-gate-buttons">
+        <button id="btn-enter" class="btn btn-primary btn-lg">✓ Yes, I'm 21+</button>
+        <button id="btn-exit" class="btn btn-outline btn-lg">✗ No, Exit</button>
+      </div>
+      <p class="age-gate-legal">By entering, you confirm you are of legal drinking age. Please drink responsibly.</p>
+    </div>
+  </div>
+
+  <div id="age-denied" class="age-denied-screen hidden">
+    <div class="denied-icon">🚫</div>
+    <h2 class="denied-title">Access Denied</h2>
+    <p class="denied-text">Sorry, you must be 21 or older to access BrewBound.<br><br>Redirecting you in a few seconds...</p>
+  </div>
+
+
+  <!-- ══ NAVBAR ════════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <a href="brewery.html" class="nav-logo">
+      <span class="nav-logo-icon">🍺</span>
+      <span class="nav-logo-text">BrewBound</span>
+    </a>
+    <div class="nav-links">
+      <a href="brewery.html" class="hide-mobile">🏭 Breweries</a>
+      <a href="events.html">📅 Events</a>
+      <a href="#pricing" class="hide-mobile">💰 Pricing</a>
+      <a href="events.html" class="nav-cta">Book Now</a>
+    </div>
+  </nav>
+
+
+  <!-- ══ HERO — full-bleed photo background ═══════════════════
+       BEGINNER NOTE: The hero has a real photo behind it.
+       We layer a dark gradient ON TOP of the photo so the
+       white text stays readable. This is a very common technique!
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="hero hero-with-photo">
+    <!-- The background photo element -->
+    <img
+      class="hero-bg-photo"
+      src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=1600&auto=format&fit=crop&q=80"
+      alt="Craft brewery interior with copper brewing tanks"
+      loading="eager"
+    >
+    <!-- Dark gradient overlay so text is readable -->
+    <div class="hero-photo-overlay"></div>
+    <!-- The actual text content -->
+    <div class="hero-text-content">
+      <div class="hero-badge">🏭 Brewery Directory</div>
+      <h1 class="hero-title">Explore Local <span>Craft Breweries</span></h1>
+      <p class="hero-subtitle">
+        Dive into detailed beer menus, discover ABV &amp; IBU profiles,
+        and find your next favorite brew.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="stat-number">8</span><span class="stat-label">Breweries</span></div>
+        <div class="stat-pill"><span class="stat-number">48</span><span class="stat-label">Beers on Tap</span></div>
+        <div class="stat-pill"><span class="stat-number">4.8★</span><span class="stat-label">Avg Rating</span></div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ══ BREWERY #1 PROFILE ════════════════════════════════ -->
+    <section class="section">
+
+      <!-- Wide banner photo for the brewery -->
+      <div class="brewery-profile-card">
+
+        <div class="brewery-banner">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=75"
+            alt="Copper Kettle Brewing taproom interior"
+            loading="lazy"
+          >
+          <div class="brewery-banner-overlay"></div>
+          <div class="brewery-banner-title">
+            <span class="section-label" style="color:#f2c060;margin-bottom:0.3rem;display:block;">🏅 Featured Brewery</span>
+            <h2>Copper Kettle Brewing Co.</h2>
+          </div>
+        </div>
+
+        <!-- Info row: avatar + details -->
+        <div class="brewery-info-row">
+          <div class="brewery-avatar">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80"
+              alt="Head Brewer Marcus Rivera"
+              loading="lazy"
+            >
+            <span class="avatar-caption">Marcus Rivera — Head Brewer</span>
+          </div>
+          <div class="brewery-details">
+            <div class="brewery-meta">
+              <span>📍 42 Hopyard Lane, Downtown District</span>
+              <span>📅 Est. 2016</span>
+              <span>⭐ 4.9 / 5.0</span>
+              <span>🍺 American Craft</span>
+            </div>
+            <p class="brewery-description">
+              Copper Kettle Brewing Co. was founded in 2016 by former chemical engineer Marcus Rivera,
+              who turned his basement hobby into one of the city's most celebrated craft breweries.
+              Located in a converted warehouse in the Downtown District, Copper Kettle is known for its
+              bold IPAs, innovative seasonal releases, and a taproom that feels like a second living room.
+              Their flagship Summer Haze IPA has won three consecutive regional gold medals.
+            </p>
+            <div style="display:flex;gap:1rem;margin-top:1.2rem;flex-wrap:wrap;">
+              <a href="events.html" class="btn btn-primary">📅 View Events</a>
+              <button class="btn btn-outline book-btn" data-item="Copper Kettle Brewery Tour">🗺️ Book a Tour</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end brewery-profile-card -->
+
+
+      <!-- ══ BEER MENU ═════════════════════════════════════════ -->
+      <div class="section-header">
+        <span class="section-label">Beer Menu</span>
+        <h2 class="section-title">Our <em>Signature</em> Brews</h2>
+        <p class="section-desc">Full tap menu with ABV, IBU ratings, and tasting notes for every craft beer.</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Beers</button>
+        <button class="filter-btn" data-filter="ipa">🍋 IPA</button>
+        <button class="filter-btn" data-filter="stout">☕ Stout</button>
+        <button class="filter-btn" data-filter="wheat">🌾 Wheat</button>
+        <button class="filter-btn" data-filter="sour">🍓 Sour</button>
+        <button class="filter-btn" data-filter="lager">🍺 Lager</button>
+        <button class="filter-btn" data-filter="seasonal">🍂 Seasonal</button>
+      </div>
+
+      <!-- Beer Cards Grid
+           BEGINNER NOTE: Each card now has a real photo at the top
+           instead of just an emoji. The photo uses object-fit:cover
+           to fill the space without stretching. -->
+      <div class="beer-grid">
+
+        <!-- CARD 1: Summer Haze IPA -->
+        <article class="beer-card" data-category="ipa">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#e8a030,#c87137);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&auto=format&fit=crop&q=75"
+              alt="Summer Haze IPA — golden beer with citrus"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">West Coast IPA</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Summer Haze IPA</h3>
+            <p class="card-description">Award-winning flagship IPA brewed with Mosaic and Citra hops. Explosion of tropical citrus and pine with a clean, dry finish.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">6.8%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">65</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">16oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍊 Citrus</span><span class="flavor-tag">🌲 Pine</span><span class="flavor-tag">🍍 Tropical</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹500</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Summer Haze IPA Tasting Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: Midnight Roast Imperial Stout -->
+        <article class="beer-card" data-category="stout">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#3a2010,#1a0f00);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&auto=format&fit=crop&q=75"
+              alt="Midnight Roast Imperial Stout — dark beer with foam"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">Imperial Stout</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Midnight Roast Imperial Stout</h3>
+            <p class="card-description">Six specialty malts including roasted barley and chocolate malt. Notes of dark chocolate, espresso, and a whisper of vanilla.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">10.2%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">42</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">12oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍫 Chocolate</span><span class="flavor-tag">☕ Espresso</span><span class="flavor-tag">🍮 Vanilla</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹670</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Midnight Roast Imperial Stout Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: Golden Fields Hefeweizen -->
+        <article class="beer-card" data-category="wheat">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#f2c060,#e8a030);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1566633806827-98b36d1c2d41?w=600&auto=format&fit=crop&q=75"
+              alt="Golden Fields Hefeweizen — cloudy golden wheat beer"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">Hefeweizen</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Golden Fields Hefeweizen</h3>
+            <p class="card-description">Classic Bavarian-style wheat beer. Banana and clove aromatics from traditional Weizen yeast with a smooth, refreshing finish.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">5.2%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">14</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">16oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍌 Banana</span><span class="flavor-tag">🌿 Clove</span><span class="flavor-tag">🍋 Lemon</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹420</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Golden Fields Hefeweizen Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: Raspberry Tart Berliner Weisse -->
+        <article class="beer-card" data-category="sour">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#d04060,#e87090);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=600&auto=format&fit=crop&q=75"
+              alt="Raspberry Tart sour beer — vivid pink beer in glass"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">Berliner Weisse</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Raspberry Tart Berliner Weisse</h3>
+            <p class="card-description">Kettle-soured wheat beer conditioned on real raspberries. Vibrant pink hue, intensely fruity-sour. Perfect summer sipper.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">3.8%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">8</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">16oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍓 Raspberry</span><span class="flavor-tag">🍋 Tart</span><span class="flavor-tag">🫐 Berry</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹500</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Raspberry Tart Berliner Weisse Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5: Kettle Pils Czech Pilsner -->
+        <article class="beer-card" data-category="lager">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#d4b840,#e8d060);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=600&auto=format&fit=crop&q=75"
+              alt="Kettle Pils Czech Pilsner — crystal clear golden lager"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">Czech Pilsner</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Kettle Pils Czech Pilsner</h3>
+            <p class="card-description">Brewed with Saaz hops and Bohemian Pilsner malt. Crystal clear, brilliantly golden, with soft bitterness and a crisp finish.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">4.9%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">38</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">16oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🌼 Floral</span><span class="flavor-tag">🌿 Herbal</span><span class="flavor-tag">✨ Crisp</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹420</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Kettle Pils Czech Pilsner Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6: Autumn Ember Märzen -->
+        <article class="beer-card" data-category="seasonal">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#c87137,#a05020);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=600&auto=format&fit=crop&q=75"
+              alt="Autumn Ember Märzen — deep amber seasonal beer"
+              loading="lazy"
+            >
+            <span class="beer-type-badge" style="background:rgba(200,113,55,0.35);color:var(--color-gold-light);">Seasonal</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Autumn Ember Märzen</h3>
+            <p class="card-description">Traditional German Märzen lager with toasted bread and caramel toffee. Brewed every September, gone by November — limited batch!</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">5.8%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">24</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">16oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍮 Caramel</span><span class="flavor-tag">🍞 Toast</span><span class="flavor-tag">🍂 Malty</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹580</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Autumn Ember Märzen Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 7: Cloud Burst Double Hazy IPA -->
+        <article class="beer-card" data-category="ipa">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#f2c060,#e8a030);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&auto=format&fit=crop&q=75"
+              alt="Cloud Burst Double Hazy IPA — juicy hazy orange beer"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">DIPA</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Cloud Burst Double Hazy IPA</h3>
+            <p class="card-description">Massively dry-hopped with Sabro, Galaxy, and Strata. Pillowy soft mouthfeel. Coconut, mango, and stone fruit — zero bitterness.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">8.4%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">35</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">12oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🥥 Coconut</span><span class="flavor-tag">🥭 Mango</span><span class="flavor-tag">🍑 Stone Fruit</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹750</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Cloud Burst Double Hazy IPA Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 8: Velvet Underground Oatmeal Stout -->
+        <article class="beer-card" data-category="stout">
+          <div class="card-color-band" style="background:linear-gradient(90deg,#5a3820,#1a0f00);"></div>
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&auto=format&fit=crop&q=75"
+              alt="Velvet Underground Oatmeal Stout — creamy dark beer"
+              loading="lazy"
+            >
+            <span class="beer-type-badge">Oatmeal Stout</span>
+          </div>
+          <div class="card-body">
+            <div class="card-brewery">Copper Kettle Brewing Co.</div>
+            <h3 class="card-name">Velvet Underground Oatmeal Stout</h3>
+            <p class="card-description">Silky smooth and dangerously drinkable. Rolled oats add luxurious creaminess. Cold-brew coffee and milk chocolate with a velvety finish.</p>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-value">5.4%</span><span class="stat-key">ABV</span></div>
+              <div class="stat-item"><span class="stat-value">28</span><span class="stat-key">IBU</span></div>
+              <div class="stat-item"><span class="stat-value">16oz</span><span class="stat-key">Size</span></div>
+            </div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">☕ Cold Brew</span><span class="flavor-tag">🍫 Milk Choc</span><span class="flavor-tag">🥛 Creamy</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price"><span class="price-label">Sample Price</span><span class="price-amount">₹500</span></div>
+              <button class="btn btn-primary btn-sm book-btn" data-item="Velvet Underground Oatmeal Stout Sample">Add to Flight</button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- end beer-grid -->
+    </section>
+
+
+    <!-- ══ PHOTO STRIP ════════════════════════════════════════
+         4 atmosphere photos in a horizontal row.
+         This brings the brewery to life visually!
+    ══════════════════════════════════════════════════════════ -->
+    <div class="photo-strip">
+      <div class="strip-item">
+        <img src="https://images.unsplash.com/photo-1518176258769-f227c798150e?w=500&auto=format&fit=crop&q=70" alt="Beer tasting flight on wooden board" loading="lazy">
+        <span class="strip-label">Tasting Flights</span>
+      </div>
+      <div class="strip-item">
+        <img src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=500&auto=format&fit=crop&q=70" alt="Brewery fermentation tanks" loading="lazy">
+        <span class="strip-label">Brewing Process</span>
+      </div>
+      <div class="strip-item">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=70" alt="Craft beer glasses cheers with friends" loading="lazy">
+        <span class="strip-label">Craft Community</span>
+      </div>
+      <div class="strip-item">
+        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=70" alt="Cozy brewery taproom with warm lighting" loading="lazy">
+        <span class="strip-label">Our Taproom</span>
+      </div>
+    </div>
+
+
+    <!-- ══ BREWERY #2: Iron Forge ════════════════════════════ -->
+    <section class="section">
+      <div class="brewery-profile-card">
+        <div class="brewery-banner">
+          <img
+            src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&auto=format&fit=crop&q=75"
+            alt="Iron Forge Brewery industrial-style taproom"
+            loading="lazy"
+          >
+          <div class="brewery-banner-overlay"></div>
+          <div class="brewery-banner-title">
+            <span class="section-label" style="color:#f2c060;margin-bottom:0.3rem;display:block;">⚒️ Partner Brewery</span>
+            <h2>Iron Forge Brewery</h2>
+          </div>
+        </div>
+        <div class="brewery-info-row">
+          <div class="brewery-avatar">
+            <img
+              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&auto=format&fit=crop&q=80"
+              alt="Head brewer Lena Vandermeer"
+              loading="lazy"
+            >
+            <span class="avatar-caption">Lena Vandermeer — Head Brewer</span>
+          </div>
+          <div class="brewery-details">
+            <div class="brewery-meta">
+              <span>📍 88 Furnace Street, Industrial Quarter</span>
+              <span>📅 Est. 2019</span>
+              <span>⭐ 4.7 / 5.0</span>
+              <span>🍺 Belgian-American Craft</span>
+            </div>
+            <p class="brewery-description">
+              Iron Forge Brewery draws inspiration from the industrial history of its neighborhood.
+              Founded by Belgian-born brewer Lena Vandermeer, the brewery specializes in Belgian-inspired
+              ales with bold American character. The taproom features exposed steel beams, forge art
+              installations, and 24 taps of creative, boundary-pushing beers.
+            </p>
+            <div style="display:flex;gap:1rem;margin-top:1.2rem;flex-wrap:wrap;">
+              <a href="events.html" class="btn btn-primary">📅 View Events</a>
+              <button class="btn btn-outline book-btn" data-item="Iron Forge Brewery Tour">🗺️ Book a Tour</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More breweries CTA banner with photo background -->
+      <div class="more-breweries-banner">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&auto=format&fit=crop&q=65" alt="Row of draft beer taps" loading="lazy" class="more-breweries-bg">
+        <div class="more-breweries-overlay"></div>
+        <div class="more-breweries-content">
+          <h3>6 More Breweries in the Directory</h3>
+          <p>Amber Valley Craft Co., Riverside Ales, Highland Hops, Barrel District Brewing &amp; more.</p>
+          <button class="btn btn-primary btn-lg book-btn" data-item="Full Brewery Directory">Explore Full Directory</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ PRICING ═══════════════════════════════════════════ -->
+    <section class="section" id="pricing">
+      <div class="section-header">
+        <span class="section-label">Packages &amp; Pricing</span>
+        <h2 class="section-title">Build Your <em>Perfect Experience</em></h2>
+        <p class="section-desc">Mix and match our tasting packages for the ideal craft beer experience.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-card-img">
+            <img src="https://images.unsplash.com/photo-1510996952651-9d8af74a4687?w=500&auto=format&fit=crop&q=70" alt="3-beer tasting flight on wooden board" loading="lazy">
+          </div>
+          <span class="pricing-icon">🍺</span>
+          <div class="pricing-name">Tasting Flight Bundle</div>
+          <div class="pricing-price">₹1,499 <span>/ flight</span></div>
+          <p class="pricing-desc">Perfect for casual exploration</p>
+          <ul class="pricing-features">
+            <li>3 curated beer samples (4oz each)</li>
+            <li>Tasting notes guide included</li>
+            <li>Choose any 3 from tap menu</li>
+            <li>Recommended food pairings</li>
+          </ul>
+          <button class="btn btn-outline book-btn" data-item="Tasting Flight Bundle (3 beers)" style="width:100%;justify-content:center;">Book This Package</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-card-img">
+            <img src="https://images.unsplash.com/photo-1555658636-6e4a36218be7?w=500&auto=format&fit=crop&q=70" alt="Premium 5-beer tasting flight with cheese board" loading="lazy">
+          </div>
+          <span class="pricing-icon">⭐</span>
+          <div class="pricing-name">Premium Tasting Flight</div>
+          <div class="pricing-price">₹2,449 <span>/ flight</span></div>
+          <p class="pricing-desc">Our most popular deep-dive experience</p>
+          <ul class="pricing-features">
+            <li>5 premium samples (5oz each)</li>
+            <li>Expert-guided tasting notes</li>
+            <li>Access to reserve &amp; barrel-aged beers</li>
+            <li>Cheese &amp; charcuterie pairing board</li>
+            <li>Keepsake tasting glass included</li>
+          </ul>
+          <button class="btn btn-primary book-btn" data-item="Premium Tasting Flight (5 beers)" style="width:100%;justify-content:center;">Book This Package</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-img">
+            <img src="https://images.unsplash.com/photo-1538991383142-36c4edeaffde?w=500&auto=format&fit=crop&q=70" alt="Brewery tour — large stainless steel fermentation tanks" loading="lazy">
+          </div>
+          <span class="pricing-icon">🏭</span>
+          <div class="pricing-name">Brewery Tour Ticket</div>
+          <div class="pricing-price">₹3,749 <span>/ person</span></div>
+          <p class="pricing-desc">Full behind-the-scenes experience</p>
+          <ul class="pricing-features">
+            <li>90-minute guided brewery tour</li>
+            <li>4-sample tasting flight included</li>
+            <li>Meet the brewmaster Q&amp;A</li>
+            <li>Sneak peek at upcoming releases</li>
+            <li>10% merch discount</li>
+          </ul>
+          <button class="btn btn-outline book-btn" data-item="Brewery Tour Ticket" style="width:100%;justify-content:center;">Book This Package</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">🍺 BrewBound</div>
+    <p class="footer-tagline">Discovering craft beer, one flight at a time.</p>
+    <nav class="footer-nav">
+      <a href="brewery.html">Breweries</a>
+      <a href="events.html">Events</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="footer-divider"></div>
+    <p class="footer-legal">
+      © 2025 BrewBound. All rights reserved. Must be 21+ to access this website.<br>
+      Please drink responsibly. Prices shown are for educational project purposes only.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
